@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.jk.mapper.FactoryMapper">
+	<!-- 数据库表映射 id="factoryRM"对应的是resultMap类型 -->
+	<resultMap id="factoryRM" type="cn.itcast.jk.domain.Factory">
+		<id property="id" column="FACTORY_ID"/><!-- 主键id -->
+		<result property="fullName" column="FULL_NAME"/>
+		<result property="factoryName" column="FACTORY_NAME"/>
+		<result property="contractor" column="CONTRACTOR"/>
+		<result property="phone" column="PHONE"/>
+		<result property="mobile" column="MOBILE"/>
+		<result property="fax" column="FAX"/>
+		<result property="cnote" column="CNOTE"/>
+		<result property="orderNo" column="ORDER_NO"/>
+		<result property="state" column="STATE"/>
+	</resultMap>
+	<!-- 列表查询 -->
+	<!-- 
+		1).id为dao层的方法名
+		2).parameterType查询的实体类型，数据库类型不与java实体字段类型映射/parameterMap被废弃
+		3).resultMap="factoryRM"是id="factoryRM"的映射，resultType返回实体，分页常用
+	 -->
+	<select id="find" parameterType="cn.itcast.jk.domain.Factory" resultMap="factoryRM">
+		select * from tb_factory
+		where 1=1
+		<if test="state!=null">
+			and state=#{state}
+		</if>
+		order by desc order_no
+	</select>
+</mapper>
