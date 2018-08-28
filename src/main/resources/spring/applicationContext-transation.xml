@@ -19,6 +19,8 @@
 	 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 	 	<property name="dataSource" ref="dataSource"/>
 	 </bean>
+	 <!-- 事务驱动 -->
+	 <tx:annotation-driven />
 	 <!-- 通知 -->
 	 <tx:advice id="txAdvice" transaction-manager="transactionManager">
 	 	<tx:attributes>
@@ -35,7 +37,7 @@
 	 <!-- aop -->
 	 <aop:config>
 	 	<!-- 切点 管理所有Service的方法 -->
-		<aop:pointcut expression="execution(* cn.bbw.jk.service.*.*(..))" id="transactionPointCut"/>
+		<aop:pointcut expression="execution(* com.bbw.jk.service.*.*(..))" id="transactionPointCut"/>
 		<!-- 增强，进行事务控制 Advisor -->
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="transactionPointCut"/>
 	 </aop:config>

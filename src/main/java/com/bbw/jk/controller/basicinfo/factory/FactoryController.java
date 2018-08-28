@@ -26,9 +26,10 @@ public class FactoryController extends BaseController{
 	@Autowired//resource javax 自带注入注解
 	FactoryService factoryService;
 	/*请求路径名,请求路径中可以包含各种参数，并且不同的请求可以绑定到同一个请求方法上*/
-	@RequestMapping(value="/basicinfo/factory/list.action",method = RequestMethod.POST)
+	@RequestMapping(value="/basicinfo/factory/list.action",method = RequestMethod.GET)
 	public String list(Factory factory,Model model){
 		List<Factory> listdata = factoryService.find(factory);
+		System.out.println(listdata.toString());
 		model.addAttribute("obj",listdata);
 		return "/basicinfo/factory/jFactoryList.jsp";//逻辑视图名
 	}

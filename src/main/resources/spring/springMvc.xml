@@ -18,7 +18,7 @@
 	<!-- 开启注解扫描驱动 -->
 	<mvc:annotation-driven/>
 	<!-- 扫描controller -->
-	<context:component-scan base-package="cn.bbw.jk.controller"/>
+	<context:component-scan base-package="com.bbw.jk.controller"/>
 	<!-- 内部资源逻辑视图解析器 -->
 	<bean id="jspInternalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/pages/"/>

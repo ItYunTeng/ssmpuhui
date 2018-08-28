@@ -2,9 +2,7 @@
 <html>
 <head>
 </head>
-<script type="text/javascript">
-	window.location.href = ".action";
-</script>
+	<jsp:forward page=".action"></jsp:forward>
 <body>
 </body>
 </html>
