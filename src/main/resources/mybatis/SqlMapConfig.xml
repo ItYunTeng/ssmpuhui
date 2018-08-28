@@ -1,0 +1,33 @@
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+	<typeAliases>
+		<!-- type:  类型，别名的全路径名    alias： 别名 -->
+		<!-- <typeAlias type="com.hc.mybatis.po.User" alias="user" /> -->
+		<!-- 批量定义别名， 自动在包下面 扫描 pojo， 别名 默认为 类名， 首字母 大写或小写 -->
+		<package name="com.bbw.jk.domain"/> 
+	</typeAliases>
+	<!-- 分页的配置 -->
+    <!--<plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+        	<property name="helperDialect" value="mysql"/>
+	        <property name="offsetAsPageNum" value="false"/>
+	        <property name="rowBoundsWithCount" value="false"/>
+	        <property name="pageSizeZero" value="true"/>
+	        <property name="reasonable" value="false"/>
+	        <property name="supportMethodsArguments" value="false"/>
+	        <property name="returnPageInfo" value="none"/>
+        </plugin>
+    </plugins> -->
+	<!--加载mapper映射
+	如果将和spring整合后，可以使用整合包中提供的mapper扫描器，此处的mappers不用配置了。
+	 -->
+	<mappers>
+		<!-- <mapper resource="sqlmap/User.xml" /> -->
+		<!-- <package name="com.hc.mybatis.mapper" /> -->
+	</mappers>
+</configuration>
