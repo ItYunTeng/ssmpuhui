@@ -19,7 +19,7 @@ import com.bbw.jk.domain.Factory;
 @Repository
 public class FactoryDaoImpl extends BaseDaoImpl<Factory> implements FactoryDao{
 	public FactoryDaoImpl() {
-		this.setNs("cn.itcast.jk.mapper.FactoryMapper.");			//设置命名空间
+		this.setNs("com.bbw.jk.mapper.FactoryMapper.");			//设置命名空间
 	}
 	
 	public void changeState(Map<String, Object> map) {
